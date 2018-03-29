@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OrigameApp</title>
+    <title>Origame DB</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+<nav>
+  <%= link_to 'Register', new_user_path %>
+  <%= link_to 'Login' %>
+  <%= link_to 'Log Out' %>
+</nav>
   <body>
     <%= yield %>
   </body>
