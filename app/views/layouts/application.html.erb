@@ -7,11 +7,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-<nav>
-  <%= link_to 'Register', new_user_path %>
-  <%= link_to 'Login' %>
-  <%= link_to 'Log Out' %>
-</nav>
+  <header>
+    <dl class="list maki">
+      <dt>Navigation</dt>
+        <% if @current_user.present? %>
+          <dd><%= link_to 'Log Out', login_path, :method => 'delete' %></dd>
+        <% elsif current_page?(controller: 'sessions', action: 'new') %>
+          <dd> <%= link_to 'Register', new_user_path %></dd>
+        <% else %>
+          <dd><%= link_to 'Login', login_path %></dd>
+          <dd><%= link_to 'Register', new_user_path %></dd>
+        <% end %>
+    </dl>
+  <% if current_page?(controller: 'pages', action: 'home') %>  <div class="hero paper"><%= image_tag 'origame-hero.png' %></div>
+  <% end %>
+  </header>
   <body>
     <%= yield %>
   </body>

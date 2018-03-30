@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+@import url('https://fonts.googleapis.com/css?family=Days+One');
+@import url('https://fonts.googleapis.com/css?family=Mina');
+
+* {
+  box-sizing:border-box;
+}
+
+.hero img {
+  background-size: cover;
+  width:100%;
+  z-index: 2;
+}
+
+.maki dt, .maki dd, .maki a { background: #e32551; }
+
+.maki a:hover { background: #d31b46; }
+
+.maki {
+    -webkit-transform: perspective(1200px) rotateY(40deg) !important;
+    -moz-transform: perspective(1200px) rotateY(40deg) !important;
+    -ms-transform: perspective(1200px) rotateY(40deg) !important;
+    -o-transform: perspective(1200px) rotateY(40deg) !important;
+    transform: perspective(1200px) rotateY(40deg) !important;
+    -webkit-transform-origin: 110% 25%;
+    -moz-transform-origin: 110% 25%;
+    -ms-transform-origin: 110% 25%;
+    -o-transform-origin: 110% 25%;
+    transform-origin: 110% 25%;
+     z-index: 2;
+    padding: 0;
+    margin-top:15%;
+}
+
+.list {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-stle: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    text-transform: uppercase;
+    position: absolute;
+    font-family: 'Days One', sans-serif;
+    width: 16%;
+      margin-left: -2%;
+}
+
+.list a {
+    display: block;
+    color: #fff;
+    padding: 4%;
+}
+
+.list a:hover {
+    text-indent: 9%;
+    padding: 4%;
+}
+
+
+.list dt, .list dd {
+    text-indent: 6%;
+    line-height: 1.25em;
+    background: #E32551;
+    height: 10%;
+    color: #fff;
+}
+
+.list dt {
+    /* Since we're hiding elements behind here, we need it in 3d */
+    -webkit-transform: translateZ(0.3px);
+    -moz-transform: translateZ(0.3px);
+    -ms-transform: translateZ(0.3px);
+    -o-transform: translateZ(0.3px);
+    transform: translateZ(0.3px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    padding: 4% 0% 5% 0%;
+}
+
+.list dt:hover {
+  cursor:pointer;
+}
+.list dd {
+    border-top: 1px dashed rgba(255,255,255,0.3);
+    line-height: 1.5em;
+    font-size: 0.75em;
+    height: 10%;
+    margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+form {
+
+  padding-top: 150px !important;
+}
+
+.login-form {
+  padding: 1.4em;
+  margin: 0 auto;
+  width: 40%;
+}
+
+.fieldset {
+  position: relative;
+  margin: 1.4em 0;
+  width: 100%;
+}
+
+.fieldset > input {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.image-replace {
+		/* replace label text with an icon */
+		display: inline-block;
+		position: absolute;
+		left: 15px;
+		height: 20px;
+		width: 20px;
+    margin-top: 15px;
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
+		text-shadow: none;
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+	}
+#login-heading {
+  background-color: #041b54;
+  color: #fff;
+  font-size: 2em;
+  padding: 20px;
+text-align: center;}
+
+#notice {
+  border: 1px solid #f7ebd0;
+  background-color: #fcf8e5;
+  color: #856d43;
+  padding: 15px 20px 15px 20px;
+
+}
+
+input {
+  display: block;
+	padding: 15px 20px 15px 50px;
+	border: 1px solid #d3d3d3;
+	outline: none;
+  width: 100%;
+}
+
+input:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px #d3d8d8 !important;
+  -moz-box-shadow: 0 0 5px #d3d8d8 !important;
+  -webkit-box-shadow: 0 0 5px #d3d8d8 !important;
+  outline: none;
+}
+
+.submit {
+  color: #fff;
+  background-color: #e32551;
+  font-family: 'Days One', sans-serif !important;
+  border: none;
+  padding: 15px 20px 15px 20px;
+}
+
+.submit:hover {
+  background-color: #d31b46;
+}
+
+.email {
+	background-image: url('icon-email.svg');
+}
+
+.password {
+	background-image: url('icon-password.svg');
+}
+
+.username {
+	background-image: url('icon-username.svg');
+}

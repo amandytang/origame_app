@@ -1,0 +1,16 @@
+<%= form_tag login_path, :class => "login-form" do %>
+<div id="login-heading"><h2>Welcome Back</h2></div>
+<% unless flash.empty? %>
+  <div id="notice"><%= flash[:error]%></div>
+<% end %>
+<p class="fieldset">
+  <%= label_tag :email, "Email", :class => "image-replace email" %>
+  <%= email_field_tag :email, nil, placeholder: "Email" %>
+
+  <%= label_tag :password, "Password", :class => "image-replace password" %>
+  <%= password_field_tag :password, nil, placeholder: "Password" %>
+
+  <%= submit_tag 'LOG IN', :class => "submit" %>
+
+</p>
+<% end %>
