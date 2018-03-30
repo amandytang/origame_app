@@ -17,108 +17,153 @@
 .maki a:hover { background: #d31b46; }
 
 .maki {
-    -webkit-transform: perspective(1200px) rotateY(40deg) !important;
-    -moz-transform: perspective(1200px) rotateY(40deg) !important;
-    -ms-transform: perspective(1200px) rotateY(40deg) !important;
-    -o-transform: perspective(1200px) rotateY(40deg) !important;
-    transform: perspective(1200px) rotateY(40deg) !important;
-    -webkit-transform-origin: 110% 25%;
-    -moz-transform-origin: 110% 25%;
-    -ms-transform-origin: 110% 25%;
-    -o-transform-origin: 110% 25%;
-    transform-origin: 110% 25%;
-     z-index: 2;
-    padding: 0;
-    margin-top:15%;
+  -webkit-transform: perspective(1200px) rotateY(40deg) !important;
+  -moz-transform: perspective(1200px) rotateY(40deg) !important;
+  -ms-transform: perspective(1200px) rotateY(40deg) !important;
+  -o-transform: perspective(1200px) rotateY(40deg) !important;
+  transform: perspective(1200px) rotateY(40deg) !important;
+  -webkit-transform-origin: 110% 25%;
+  -moz-transform-origin: 110% 25%;
+  -ms-transform-origin: 110% 25%;
+  -o-transform-origin: 110% 25%;
+  transform-origin: 110% 25%;
+  z-index: 2;
+  padding: 0;
+  margin-top:15%;
 }
 
 .list {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-stle: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    text-transform: uppercase;
-    position: absolute;
-    font-family: 'Days One', sans-serif;
-    width: 16%;
-      margin-left: -2%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-stle: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  text-transform: uppercase;
+  position: absolute;
+  font-family: 'Days One', sans-serif;
+  width: 16%;
+  margin-left: -2%;
 }
 
 .list a {
-    display: block;
-    color: #fff;
-    padding: 4%;
+  display: block;
+  color: #fff;
+  padding: 4%;
 }
 
 .list a:hover {
-    text-indent: 9%;
-    padding: 4%;
+  text-indent: 9%;
+  padding: 4%;
 }
 
-
 .list dt, .list dd {
-    text-indent: 6%;
-    line-height: 1.25em;
-    background: #E32551;
-    height: 10%;
-    color: #fff;
+  text-indent: 6%;
+  line-height: 1.25em;
+  background: #E32551;
+  height: 10%;
+  color: #fff;
 }
 
 .list dt {
-    /* Since we're hiding elements behind here, we need it in 3d */
-    -webkit-transform: translateZ(0.3px);
-    -moz-transform: translateZ(0.3px);
-    -ms-transform: translateZ(0.3px);
-    -o-transform: translateZ(0.3px);
-    transform: translateZ(0.3px);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-    font-size: 1em;
-    padding: 4% 0% 5% 0%;
+  -webkit-transform: translateZ(0.3px);
+  -moz-transform: translateZ(0.3px);
+  -ms-transform: translateZ(0.3px);
+  -o-transform: translateZ(0.3px);
+  transform: translateZ(0.3px);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  padding: 4% 0% 5% 0%;
 }
 
 .list dt:hover {
-  cursor:pointer;
+  cursor: pointer;
 }
+
 .list dd {
-    border-top: 1px dashed rgba(255,255,255,0.3);
-    line-height: 1.5em;
-    font-size: 0.75em;
-    height: 10%;
-    margin: 0;
+  border-top: 1px dashed rgba(255,255,255,0.3);
+  line-height: 1.5em;
+  font-size: 0.75em;
+  height: 10%;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
 }
 
-form {
+.arrow {
+  margin-top: -20%;
+}
 
+.arrow img {
+  float: right;
+  margin-right: 20px;
+  width: 70px;
+}
+
+.about {
+  width: 60%;
+  margin: 25% auto 0 auto;;
+  color: #081e50;
+}
+
+.about p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.1em;
+}
+
+h2 {
+  font-family: 'Mina', sans-serif;
+}
+
+form {
   padding-top: 150px !important;
 }
 
-.login-form {
+.form {
+  padding: 1.4em;
+  margin: 0 auto;
+  width: 40%;
+}
+
+#new_user {
   padding: 1.4em;
   margin: 0 auto;
   width: 40%;
 }
 
 .fieldset {
-  position: relative;
-  margin: 1.4em 0;
+  position: relative !important;
+  margin: 1.4em 0 !important;
   width: 100%;
 }
 
+.field_with_errors {
+  position: relative !important;
+  margin: 1.4em 0 !important;
+  width: 100%;
+}
+#user_password, #user_password_confirmation {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+}
 .fieldset > input {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.image-replace {
+.field_with_errors input {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.field_with_errors.image-replace, .image-replace {
 		/* replace label text with an icon */
 		display: inline-block;
-		position: absolute;
-		left: 15px;
+    float:right;
+    position: absolute;
+		margin-left: 15px !important;
 		height: 20px;
 		width: 20px;
     margin-top: 15px;
@@ -129,25 +174,44 @@ form {
 		text-shadow: none;
 		background-repeat: no-repeat;
 		background-position: 50% 0;
+    outline: none;
 	}
+
 #login-heading {
-  background-color: #041b54;
+  background-image: url('wild-sea.png');
   color: #fff;
-  font-size: 2em;
-  padding: 20px;
-text-align: center;}
+  font-size: 1.2em;
+  padding: 55px 20px 20px 20px;
+  font-family: 'Days One';
+  text-transform: uppercase;
+  text-align: center;
+  max-height: 150px;
+}
+
+#register-heading {
+  background-image: url('peach-pattern.png');
+  opacity: 0.98;
+  color: #010000;
+  font-size: 1.2em;
+  padding: 55px 20px 20px 20px;
+  font-family: 'Days One';
+  text-transform: uppercase;
+  text-align: center;
+  max-height: 150px;
+}
 
 #notice {
   border: 1px solid #f7ebd0;
   background-color: #fcf8e5;
   color: #856d43;
   padding: 15px 20px 15px 20px;
+  font-family: 'IBM Plex Sans', sans-serif;
 
 }
 
 input {
   display: block;
-	padding: 15px 20px 15px 50px;
+	padding: 15px 20px 15px 50px !important;
 	border: 1px solid #d3d3d3;
 	outline: none;
   width: 100%;
@@ -175,12 +239,18 @@ input:focus {
 
 .email {
 	background-image: url('icon-email.svg');
+  border: none;
+  z-index: 222;
 }
 
 .password {
 	background-image: url('icon-password.svg');
+  border: none;
+  z-index: 222;
 }
 
 .username {
 	background-image: url('icon-username.svg');
+  border: none;
+  z-index: 222;
 }

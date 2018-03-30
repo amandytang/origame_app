@@ -13,6 +13,7 @@ $(document).ready( function () {
     $( '.list' ).makisu( 'toggle' );
   });
 
+if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users') {
 
   var folded = new OriDomi('.paper');
   var folded = new OriDomi('.paper', {
@@ -28,7 +29,6 @@ $(document).ready( function () {
 
   folded.reveal(23);
 
-
-
+  }
 
 });

@@ -1,24 +1,30 @@
-<h1>Register</h1>
 
 <% if @user.errors.any? %>
-  <ul>
-    <% @user.errors.full_messages.each do |msg|  %>
-    <li><%= msg.capitalize %></li>
-  </ul>
-  <% end %>
+<div id="notice">
+  <% @user.errors.full_messages.each do |msg|  %>
+  <%= msg.capitalize %>.&nbsp;
+</div>
 <% end %>
+<% end %>
+
 <%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username, :required => true, :autofocus => true %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email, :required => true %>
+<div id="register-heading" class="paper">Welcome</div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+<p class="fieldset">
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.label :username, :class => "image-replace username" %>
+  <%= f.text_field :username, :required => true, :autofocus => true, placeholder: "Username" %>
 
-  <%= f.submit 'Sign Up' %>
+  <%= f.label :email, :class => "image-replace email" %>
+  <%= f.email_field :email, :required => true, placeholder: "Email" %>
+
+  <%= f.label :password, :class => "image-replace password" %>
+  <%= f.password_field :password, placeholder: "Password" %>
+
+  <%= f.label :password_confirmation, :class => "image-replace password"%>
+  <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+
+  <%= f.submit 'REGISTER', :class => "submit" %>
+  </p>
 <% end %>
