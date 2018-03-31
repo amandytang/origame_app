@@ -1,0 +1,6 @@
+<h1>Creators</h1>
+<%= link_to 'Add Creator', new_creator_path %>
+<br>
+<% @creators.each do |creator| %>
+  <%= link_to creator.name, creator %>
+<% end %>

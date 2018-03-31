@@ -1,2 +1,21 @@
-<h1>Designs#new</h1>
-<p>Find me in app/views/designs/new.html.erb</p>
+<%= form_for @design do |f| %>
+
+<div id="form-heading" class="paper">Add a Design</div>
+
+<p class="fieldset">
+
+  <%= f.label :name, :class => "image-replace name" %>
+  <%= f.text_field :name, :required => true, :autofocus => true, placeholder: "Name of Design" %>
+
+  <%= f.label :instructions, :class => "image-replace link" %>
+  <%= f.text_field :instructions, placeholder: "Link to Instructions" %>
+
+  <%= f.label :difficulty, :class => "image-replace difficulty" %>
+  <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], :prompt => 'Difficulty' %>
+
+  <%= f.label :creator_id, :class => "image-replace username" %>
+  <%= f.select :creator_id, Creator.pluck(:name, :id), :prompt => "Creator Name" %>
+
+  <%= f.submit 'CREATE DESIGN', :class => "submit" %>
+  </p>
+<% end %>

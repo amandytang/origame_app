@@ -85,7 +85,6 @@
   height: 10%;
   margin: 0;
 }
-
 a {
   text-decoration: none;
 }
@@ -101,9 +100,18 @@ a {
 }
 
 .about {
-  width: 60%;
-  margin: 25% auto 0 auto;;
+  width: 40%;
+  margin: 27% auto 0 auto;;
   color: #081e50;
+}
+
+.about a {
+  color: #042069;
+  border-bottom: 1px solid #042069;
+}
+
+.about a:hover {
+  opacity: 0.8;
 }
 
 .about p {
@@ -111,18 +119,28 @@ a {
   font-size: 1.1em;
 }
 
+.accent {
+  border-bottom: 1px dotted #051b54;
+}
+
 h2 {
   font-family: 'Mina', sans-serif;
 }
 
+.feature {
+  max-width: 600px;
+}
+
 form {
   padding-top: 150px !important;
+  width: 40% !important;
+  margin: 0 auto !important;;
 }
 
 .form {
   padding: 1.4em;
   margin: 0 auto;
-  width: 40%;
+  width: 40% !important;
 }
 
 #new_user {
@@ -136,22 +154,40 @@ form {
   margin: 1.4em 0 !important;
   width: 100%;
 }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  border: 1px solid #d3d3d3;
+  outline: none;
+  width: 100%;
+  color: #757575;
+  padding: 15px 20px 15px 50px !important;
+}
 
 .field_with_errors {
   position: relative !important;
   margin: 1.4em 0 !important;
   width: 100%;
 }
+
 #user_password, #user_password_confirmation {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
 }
+
 .fieldset > input {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.fieldset > select {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
 .field_with_errors input {
   margin-top: 30px !important;
   margin-bottom: 30px !important;
@@ -177,7 +213,7 @@ form {
     outline: none;
 	}
 
-#login-heading {
+#form-heading {
   background-image: url('wild-sea.png');
   color: #fff;
   font-size: 1.2em;
@@ -188,16 +224,23 @@ form {
   max-height: 150px;
 }
 
-#register-heading {
-  background-image: url('peach-pattern.png');
-  opacity: 0.98;
-  color: #010000;
-  font-size: 1.2em;
+#heading {
+  background-image: url('peach.png');
   padding: 55px 20px 20px 20px;
   font-family: 'Days One';
-  text-transform: uppercase;
   text-align: center;
   max-height: 150px;
+}
+
+#heading h1 {
+  background-color: #4a0000;
+  color: #fff;
+  padding: 4px 0px 4px 0px;
+  width: 40%;
+  font-weight: normal;
+  margin: 0 auto;
+  font-size: 1.7em;
+  text-transform: uppercase;
 }
 
 #notice {
@@ -206,7 +249,6 @@ form {
   color: #856d43;
   padding: 15px 20px 15px 20px;
   font-family: 'IBM Plex Sans', sans-serif;
-
 }
 
 input {
@@ -230,11 +272,23 @@ input:focus {
   background-color: #e32551;
   font-family: 'Days One', sans-serif !important;
   border: none;
-  padding: 15px 20px 15px 20px;
+  padding: 15px 20px 15px 0px !important;;
 }
 
 .submit:hover {
   background-color: #d31b46;
+}
+
+.image {
+  background-image: url('icon-image.svg');
+  border: none;
+  z-index: 222;
+}
+
+.nationality {
+	background-image: url('icon-nationality.svg');
+  border: none;
+  z-index: 222;
 }
 
 .email {
@@ -251,6 +305,24 @@ input:focus {
 
 .username {
 	background-image: url('icon-username.svg');
+  border: none;
+  z-index: 222;
+}
+
+.difficulty {
+	background-image: url('icon-difficulty.svg');
+  border: none;
+  z-index: 222;
+}
+
+.name {
+	background-image: url('icon-design.svg');
+  border: none;
+  z-index: 222;
+}
+
+.link {
+	background-image: url('icon-link.svg');
   border: none;
   z-index: 222;
 }

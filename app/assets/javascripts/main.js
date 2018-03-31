@@ -13,7 +13,7 @@ $(document).ready( function () {
     $( '.list' ).makisu( 'toggle' );
   });
 
-if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users') {
+if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users' || window.location.pathname == '/designs/new' || window.location.pathname.startsWith('/designs/') == true || window.location.pathname == '/creators/new') {
 
   var folded = new OriDomi('.paper');
   var folded = new OriDomi('.paper', {
@@ -30,5 +30,8 @@ if (window.location.pathname == '/login' || window.location.pathname == '/' || w
   folded.reveal(23);
 
   }
+
+  $('#notice').addClass('animated slideInDown');
+
 
 });

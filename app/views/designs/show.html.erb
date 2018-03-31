@@ -1,2 +1,16 @@
-<h1>Designs#show</h1>
-<p>Find me in app/views/designs/show.html.erb</p>
+<h1><%= @design.name %></h1>
+<li>Difficulty: <%= @design.difficulty %></li>
+<li>Folding Instructions: <%= @design.instructions %></li>
+<% if @design.creator.present? %>
+<li>Designed by: <%= @design.creator.name %></li>
+<% end %>
+
+<% if @design.image.present? %>
+<%= image_tag @design.image, :class => 'feature' %>
+<% end %>
+
+<div class="controls">
+  <%= link_to 'Delete Design', @design, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <%= link_to 'Edit Design', edit_design_path(@design) %>
+
+</div>

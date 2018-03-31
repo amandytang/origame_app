@@ -1,0 +1,17 @@
+<h1><%= @creator.name %></h1>
+<li>Nationality: <%= @creator.nationality %></li>
+<% if @creator.website.present? %>
+<%= link_to 'Website', @creator.website %>
+<% end %>
+
+<% unless @creator.designs.empty? %>
+
+<% @creator.designs.each do |design| %>
+<li> <%= design.name %></li>
+<% end %>
+<% end %>
+<div class="controls">
+  <%= link_to 'Delete Creator', @creator, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+  <%= link_to 'Edit Creator', edit_creator_path(@creator) %>
+
+</div>

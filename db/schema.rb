@@ -28,7 +28,8 @@ ActiveRecord::Schema.define(version: 20180329040833) do
     t.text "name"
     t.text "image"
     t.text "instructions"
-    t.integer "difficulty"
+    t.text "difficulty"
+    t.float "rating"
     t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

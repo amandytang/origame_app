@@ -1,2 +1,21 @@
-<h1>Designs#edit</h1>
-<p>Find me in app/views/designs/edit.html.erb</p>
+<%= form_for @design do |f| %>
+
+<div id="form-heading" class="paper">Edit Design</div>
+
+<p class="fieldset">
+
+  <%= f.label :name, :class => "image-replace name" %>
+  <%= f.text_field :name, :required => true, :autofocus => true, placeholder: "Name of Design" %>
+
+  <%= f.label :image, :class => "image-replace image" %>
+  <%= f.url_field :image, placeholder: "Link to Image" %>
+  
+  <%= f.label :difficulty, :class => "image-replace difficulty" %>
+  <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], :prompt => 'Difficulty' %>
+
+  <%= f.label :instructions, :class => "image-replace link" %>
+  <%= f.text_field :instructions, placeholder: "Link to Instructions" %>
+
+  <%= f.submit 'EDIT DESIGN', :class => "submit" %>
+  </p>
+<% end %>
