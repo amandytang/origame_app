@@ -9,12 +9,15 @@
 
   <%= f.label :image, :class => "image-replace image" %>
   <%= f.url_field :image, placeholder: "Link to Image" %>
-  
+
   <%= f.label :difficulty, :class => "image-replace difficulty" %>
   <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], :prompt => 'Difficulty' %>
 
   <%= f.label :instructions, :class => "image-replace link" %>
   <%= f.text_field :instructions, placeholder: "Link to Instructions" %>
+
+  <%= f.label :creator_id, :class => "image-replace username" %>
+  <%= f.select :creator_id, Creator.pluck(:name, :id), :prompt => "Creator Name" %>
 
   <%= f.submit 'EDIT DESIGN', :class => "submit" %>
   </p>

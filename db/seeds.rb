@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :email => 'mandy@ga.co'
 
 Design.destroy_all
-d1 = Design.create :name => 'Bottle and Cork', :difficulty => 4, :instructions => 'http://jonakashima.com.br/2017/06/23/origami-bottle-v2-cork/'
+d1 = Design.create :name => 'Bottle and Cork', :difficulty => 'Advanced', :instructions => 'http://jonakashima.com.br/2017/06/23/origami-bottle-v2-cork/', :image => 'https://i.imgur.com/e9GHYC0.jpg', :creator_id => 5
+d2 = Design.create :name => 'Potted Flowers', :difficulty => 'Intermediate', :instructions => 'http://jonakashima.com.br/2016/10/19/origami-flowers/', :image => 'https://i.imgur.com/FQbAvBU.jpg', :creator_id => 5
+
 
 Creator.destroy_all
 c1 = Creator.create :name => 'Jo Nakashima', :nationality => 'Brazilian/Japanese', :website => 'http://jonakashima.com.br/'

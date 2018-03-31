@@ -1,5 +1,6 @@
 $(document).ready( function () {
 
+
   var $maki = $( '.maki' );
 
   $maki.makisu({
@@ -12,6 +13,7 @@ $(document).ready( function () {
   $( 'dt' ).on( 'click', function() {
     $( '.list' ).makisu( 'toggle' );
   });
+
 
 if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users' || window.location.pathname == '/designs/new' || window.location.pathname.startsWith('/designs/') == true || window.location.pathname == '/creators/new') {
 
@@ -32,6 +34,17 @@ if (window.location.pathname == '/login' || window.location.pathname == '/' || w
   }
 
   $('#notice').addClass('animated slideInDown');
+
+  $("#gallery").stalactite({
+  duration: 350,                        // Duration of animation.
+  easing: 'swing',                      // Easing method.
+  cssPrefix: '.stalactite',             // The css naming convention.
+  cssPrep: true,                        // Should stalactite structurally modify css of children?
+  fluid: true,                          // Should stalactite recalculate on window resize?
+  loader: '<img />',                    // The contents of the loader. Defaults to a dataURL animated gif.
+  styles: {}                            // A style object to place on the child elements
+  complete: function(v) { return v; }  // Callback function
+  });
 
 
 });
