@@ -1,2 +1,21 @@
-<h1>Creators#edit</h1>
-<p>Find me in app/views/creators/edit.html.erb</p>
+<%= form_for @creator do |f| %>
+
+<div id="form-heading" class="paper">Edit a Creator</div>
+
+<p class="fieldset">
+
+  <%= f.label :name, :class => "image-replace username" %>
+  <%= f.text_field :name, :required => true, :autofocus => true, placeholder: "Name of Creator" %>
+
+  <%= f.label :nationality, :class => "image-replace nationality" %>
+  <%= f.text_field :nationality, placeholder: "Nationality" %>
+
+  <%= f.label :website, :class => "image-replace link" %>
+  <%= f.url_field :website, placeholder: "Website URL" %>
+
+  <%= f.label :image, :class => "image-replace image" %>
+  <%= f.url_field :image, placeholder: "Image of Creator" %>
+
+  <%= f.submit 'EDIT CREATOR', :class => "submit" %>
+  </p>
+<% end %>

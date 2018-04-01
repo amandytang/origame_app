@@ -32,6 +32,17 @@ class DesignsController < ApplicationController
     redirect_to design
   end
 
+  def favourite
+    @design = Design.find params[:id]
+    type = params[:type]
+    if type == "favourite"
+      @current_user.favourites << @design
+      redirect_to @design
+    elsif type == "unfavourite"
+      @current_user.favourites.delete(@design)
+    end
+  end
+
 private
 def design_params
   params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id)

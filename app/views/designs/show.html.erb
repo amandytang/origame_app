@@ -1,20 +1,27 @@
 <div class="container">
 
-
   <h2><%= @design.name %></h2>
-  <li>Difficulty: <%= @design.difficulty %></li>
-  <li>Folding Instructions: <%= @design.instructions %></li>
   <% if @design.creator.present? %>
-  <li>Designed by: <%= @design.creator.name %></li>
+  <li>Designed by <%= link_to @design.creator.name, @design.creator %>
+
+<% if @design.difficulty.present? %>
+  <span><%= image_tag('icon-difficulty.svg', alt: 'Difficulty Icon', :class => 'icon') %> <%= @design.difficulty %></span>
+  <% end %>
+  </li>
   <% end %>
 
-  <% if @design.image.present? %>
-  <%= image_tag @design.image, :class => 'feature', :alt => @design.name %>
-  <% end %>
+    <% if @design.image.present? %>
+    <%= image_tag @design.image, :class => 'feature', :alt => @design.name %>
+    <% end %>
 
-  <div class="controls">
-    <%= link_to 'Delete Design', @design, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-    <%= link_to 'Edit Design', edit_design_path(@design) %>
-  </div>
+    <% if @design.instructions.present? %>
+      <div class="instructions"><%= link_to 'Folding Instructions', @design.instructions %></div>
+    <br><% end %>
+    <div class="controls">
+      <li><%= image_tag('icon-edit.svg', alt: 'Edit Icon', :class => 'icon') %><%= link_to 'Edit Design', edit_design_path(@design) %></li>
+      <li><%= image_tag('icon-delete.svg', alt: 'Delete Icon', :class => 'icon') %><%= link_to 'Delete Design', @design, :method => 'delete', :data => { :confirm => 'Are you sure?' } %></li>
+    </div>
+<br>
+<%= link_to 'Favourite', favourite_design_path(@design, type: "favourite"), method: :put %>
 
 </div>

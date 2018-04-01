@@ -16,6 +16,7 @@
           <dd><%= link_to 'Add Design', new_design_path %></dd>
           <dd><%= link_to 'Creators', creators_path %></dd>
           <dd><%= link_to 'Add Creator', new_creator_path %></dd>
+          <dd><%= link_to 'Favourites', '/favourites' %></dd>
           <dd><%= link_to 'Log Out', login_path, :method => 'delete' %></dd>
         <% elsif current_page?(controller: 'sessions', action: 'new') %>
           <dd><%= link_to 'Home', root_path %></dd>

@@ -19,8 +19,8 @@ $(document).ready( function () {
              $(this).addClass("active");
          }
      });
-     
-if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users' || window.location.pathname == '/designs/new' || window.location.pathname.startsWith('/designs/') == true || window.location.pathname == '/creators/new') {
+
+if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users' || window.location.pathname == '/designs/new' || window.location.pathname.startsWith('/designs/') == true || window.location.pathname == '/creators/new' || window.location.pathname.startsWith('/creators/') == true) {
 
   var folded = new OriDomi('.paper');
   var folded = new OriDomi('.paper', {
