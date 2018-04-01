@@ -12,6 +12,17 @@
   z-index: 2;
 }
 
+body {
+  margin: 0 auto !important;
+  padding: 0px !important;
+  display: inline-block;
+  width: 100%;
+}
+
+header {
+  display: inline-block;
+}
+
 .maki dt, .maki dd, .maki a { background: #e32551; }
 
 .maki a:hover { background: #d31b46; }
@@ -28,8 +39,7 @@
   -o-transform-origin: 110% 25%;
   transform-origin: 110% 25%;
   z-index: 2;
-  padding: 0;
-  margin-top:15%;
+  margin-top: 10%;
 }
 
 .list {
@@ -50,6 +60,10 @@
   padding: 4%;
 }
 
+a.active {
+  text-indent: 9%;
+  padding: 4%;
+}
 .list a:hover {
   text-indent: 9%;
   padding: 4%;
@@ -85,6 +99,7 @@
   height: 10%;
   margin: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -129,7 +144,12 @@ a {
 }
 
 .feature {
-  max-width: 50%;
+  max-width: 75%;
+  margin: 0 auto;
+  display: block;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
 .thumb {
@@ -152,7 +172,7 @@ a {
 	left: 12px;
 	bottom: 10px;
 	background: transparent;
--webkit-transform: skew(-5deg) rotate(-5deg);
+  -webkit-transform: skew(-5deg) rotate(-5deg);
 	-moz-transform: skew(-5deg) rotate(-5deg);
 	-ms-transform: skew(-5deg) rotate(-5deg);
 	-o-transform: skew(-5deg) rotate(-5deg);
@@ -177,12 +197,12 @@ a {
   position: absolute;
   font-size: 0.9em;
   font-family: 'IBM Plex Sans', sans-serif;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.15);
   width: 250px;
   margin: -43px auto 0px 0px;
   padding: 10px;
+  color: #fff;
 }
-
 
 .thumb img {
   object-fit: cover;
@@ -190,8 +210,33 @@ a {
   height: 250px;
 }
 
+.hvr-float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+.hvr-float:hover, .hvr-float:focus, .hvr-float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+}
+
 h2 {
   font-family: 'Mina', sans-serif;
+}
+
+.container {
+  width: 65%;
+  margin: 5% auto 0 auto;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 form {
@@ -217,6 +262,7 @@ form {
   margin: 1.4em 0 !important;
   width: 100%;
 }
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;

@@ -14,7 +14,12 @@ $(document).ready( function () {
     $( '.list' ).makisu( 'toggle' );
   });
 
-
+  $("[href]").each(function() {
+         if (this.href == window.location.href) {
+             $(this).addClass("active");
+         }
+     });
+     
 if (window.location.pathname == '/login' || window.location.pathname == '/' || window.location.pathname == '/users/new' || window.location.pathname == '/users' || window.location.pathname == '/designs/new' || window.location.pathname.startsWith('/designs/') == true || window.location.pathname == '/creators/new') {
 
   var folded = new OriDomi('.paper');
@@ -43,7 +48,6 @@ if (window.location.pathname == '/login' || window.location.pathname == '/' || w
   fluid: true,                          // Should stalactite recalculate on window resize?
   loader: '<img />',                    // The contents of the loader. Defaults to a dataURL animated gif.
   styles: {}                            // A style object to place on the child elements
-  complete: function(v) { return v; }  // Callback function
   });
 
 

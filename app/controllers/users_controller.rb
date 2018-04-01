@@ -3,10 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create  
+  def create
     @user = User.new user_params
     if @user.save
-      redirect_to designs_path
+      redirect_to login_path
     else
       render :new
     end
