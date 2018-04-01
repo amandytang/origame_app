@@ -362,6 +362,12 @@ select {
   padding-right: 1px;
   width: 23px;
 }
+
+.like {
+  vertical-align: -4px;
+padding-left: 2px;
+  margin-right: 3px;
+}
 #form-heading {
   background-image: url('wild-sea.png');
   color: #fff;

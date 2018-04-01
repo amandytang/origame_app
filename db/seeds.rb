@@ -14,7 +14,7 @@ d2 = Design.create :name => 'Potted Flowers', :difficulty => 'Intermediate', :in
 d3 = Design.create :name => 'Penguin', :difficulty => 'Beginner', :instructions => 'http://jonakashima.com.br/2015/07/13/origami-penguin/', :image => 'https://i.imgur.com/lF3wKbL.jpg'
 d4 = Design.create :name => 'Elephant', :difficulty => 'Beginner', :instructions => 'https://www.youtube.com/watch?v=InIpbaPdA54&t=5s', :image => 'https://i.imgur.com/okKPk3l.jpg'
 d5 = Design.create :name => "VOG's Butterfly", :difficulty => 'Beginner', :image => 'https://i.imgur.com/RgszVTP.jpg'
-
+d6 = Design.create :name => "Ghost"
 
 Creator.destroy_all
 c1 = Creator.create :name => 'Jo Nakashima', :nationality => 'Brazilian/Japanese', :website => 'http://jonakashima.com.br/', :image => 'https://i.imgur.com/XF9UqPA.jpg'

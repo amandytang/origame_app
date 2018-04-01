@@ -1,7 +1,10 @@
 <div id="gallery">
 <% @designs.each do |design| %>
-<% if design.image.present? %>
+  <% if design.image.present? %>
+    <div class="thumb hvr-float">
+     <%= link_to image_tag(design.image, alt: design.name), design %><div class="label"><%= design.name %></div></div>
+  <% else %>
   <div class="thumb hvr-float">
-   <%= link_to image_tag(design.image, alt: design.name), design %><div class="label"><%= design.name %></div></div>
+   <%= link_to image_tag('default.png', alt: design.name), design %><div class="label"><%= design.name %></div></div>
     <% end %>
   <% end %></div>

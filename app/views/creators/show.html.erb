@@ -1,7 +1,9 @@
 <div class="container">
 
 <h2><%= @creator.name %></h2>
+<% if @creator.image.present? %>
 <li>Nationality: <%= @creator.nationality %></li>
+<% end %>
 <% if @creator.website.present? %>
 <li><%= link_to 'Website', @creator.website %></li>
 <% end %>

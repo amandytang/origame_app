@@ -40,6 +40,7 @@ class DesignsController < ApplicationController
       redirect_to @design
     elsif type == "unfavourite"
       @current_user.favourites.delete(@design)
+      redirect_to @design
     end
   end
 

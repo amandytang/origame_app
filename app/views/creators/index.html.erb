@@ -3,5 +3,8 @@
 <% if creator.image.present? %>
   <div class="thumb hvr-float">
    <%= link_to image_tag(creator.image, alt: creator.name), creator %><div class="label"><%= creator.name %></div></div>
+   <% else %>
+   <div class="thumb hvr-float">
+    <%= link_to image_tag('default.png', alt: creator.name), creator %><div class="label"><%= creator.name %></div></div>
     <% end %>
   <% end %></div>
