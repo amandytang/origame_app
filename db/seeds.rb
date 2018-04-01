@@ -20,6 +20,7 @@ Creator.destroy_all
 c1 = Creator.create :name => 'Jo Nakashima', :nationality => 'Brazilian/Japanese', :website => 'http://jonakashima.com.br/', :image => 'https://i.imgur.com/XF9UqPA.jpg'
 c2 = Creator.create :name => 'Michael LaFosse', :nationality => 'American', :website => 'http://www.origamido.com/', :image => 'https://i.imgur.com/hcsvNQC.jpg'
 c3 = Creator.create :name => 'Fumiaki Kawahata', :nationality => 'Japanese', :image => 'https://i.imgur.com/NGQFZbf.jpg'
+c4 = Creator.create :name => 'Unknown' 
 
 c1.designs << d1
 c1.designs << d2
