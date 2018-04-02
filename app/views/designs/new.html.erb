@@ -19,6 +19,10 @@
   <%= f.label :creator_id, :class => "image-replace username" %>
   <%= f.select :creator_id, Creator.pluck(:name, :id), :prompt => "Creator Name" %>
 
+       <%= f.fields_for :design_rating do |g| %>
+       <%= g.label :rating_value %>
+         <%= g.text_field :rating_value, placeholder: "Placeholder" %>
+<% end %>
   <%= f.submit 'CREATE DESIGN', :class => "submit" %>
   </p>
 <% end %>
