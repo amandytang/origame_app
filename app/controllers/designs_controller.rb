@@ -9,6 +9,8 @@ class DesignsController < ApplicationController
 
   def create
     design = Design.create design_params
+    @design_rating = design.design_ratings.new design_params
+    @design_rating.save
     redirect_to design
   end
 
@@ -42,11 +44,16 @@ class DesignsController < ApplicationController
       @current_user.favourites.delete(@design)
       redirect_to @design
     end
+
+  def rate
+    @design = Design.find params[:id]
+
+    end
   end
 
 private
 def design_params
-  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id)
+  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :rating_value, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
 end
 
 end

@@ -15,4 +15,6 @@ class User < ApplicationRecord
   validates :email, :presence => true, :uniqueness => true
   has_many :design_favourites # Just the relationships
   has_many :favourites, through: :design_favourites, source: :design # The actual design
+  has_many :design_ratings
+  has_many :rated_designs, through: :design_ratings, source: :design
 end

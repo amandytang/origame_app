@@ -1,5 +1,7 @@
 <div class="container">
 
+
+
   <h2><%= @design.name %></h2>
   <% if @design.creator.present? %>
     <li>Designed by <%= link_to @design.creator.name, @design.creator %>
@@ -26,5 +28,13 @@
     <% else %>
       <li><%= image_tag('icon-like.svg', alt: 'Favourite Icon', :class => 'icon') %><%= link_to 'Add to Favourites', favourite_design_path(@design, type: "favourite"), method: :put %></li>
     <% end %>
+
+
+    <% if @current_user.rated_designs.present? %>
+    Rates
+    <% else %>
+    No rates
+    <% end %>
+
   </div>
 </div>

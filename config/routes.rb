@@ -12,7 +12,10 @@ Rails.application.routes.draw do
   resources :designs do
     put :favourite, on: :member
   end
+  resources :designs do
+put :rating, on: :member
+end
   get '/favourites' => 'designfavourites#index'
   resources :creators
-  
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401045333) do
+ActiveRecord::Schema.define(version: 20180401113935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20180401045333) do
   create_table "design_favourites", force: :cascade do |t|
     t.integer "design_id"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "design_ratings", force: :cascade do |t|
+    t.integer "design_id"
+    t.integer "user_id"
+    t.float "rating_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
