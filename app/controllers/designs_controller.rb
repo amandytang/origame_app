@@ -57,7 +57,7 @@ def design_params
 end
 
 def rating_params
-  params.require(:design_rating).permit(:rating_value, :rating_id, :user_id)
+  params.permit(:rating_value, :rating_id, :user_id)
 end
 
 end
