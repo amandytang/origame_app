@@ -8,11 +8,11 @@ class DesignsController < ApplicationController
   end
 
   def create
-    design = Design.create design_params
+    @design = Design.create design_params
+    @design.ratings.update(params[:rating_value])
+    @current_user.rated_designs << @design
 
-    @design_rating = params[:rating_value]
-    @current_user.rated_designs.update rating_params
-    redirect_to design
+    redirect_to @design
 
   end
 
