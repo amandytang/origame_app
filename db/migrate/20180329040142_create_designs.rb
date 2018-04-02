@@ -5,7 +5,6 @@ class CreateDesigns < ActiveRecord::Migration[5.1]
       t.text :image
       t.text :instructions
       t.text :difficulty
-      t.float :rating
       t.integer :creator_id
 
       t.timestamps

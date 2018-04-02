@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20180401113935) do
     t.text "image"
     t.text "instructions"
     t.text "difficulty"
-    t.float "rating"
     t.integer "creator_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -21,8 +21,8 @@
 
 
      <%= f.fields_for :design_rating do |g| %>
-     <%= g.label :rating_value %>
-       <%= g.text_field :rating_value, placeholder: "Placeholder" %>
+     <%= g.label :rating_value, :class => "image-replace" %>
+       <%= g.text_field :rating_value, placeholder: "Rating" %>
 
      <% end %>
   <%= f.submit 'EDIT DESIGN', :class => "submit" %>

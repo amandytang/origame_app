@@ -9,9 +9,11 @@ class DesignsController < ApplicationController
 
   def create
     design = Design.create design_params
-    @design_rating = DesignRating.create rating_params
 
+    @design_rating = params[:rating_value]
+    @current_user.rated_designs.update rating_params
     redirect_to design
+
   end
 
   def destroy
