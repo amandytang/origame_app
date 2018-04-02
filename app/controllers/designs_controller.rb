@@ -9,8 +9,8 @@ class DesignsController < ApplicationController
 
   def create
     design = Design.create design_params
-    @design_rating = DesignRating.new design_params
-    @design_rating.save
+    @design_rating = DesignRating.create rating_params
+
     redirect_to design
   end
 
@@ -54,6 +54,10 @@ class DesignsController < ApplicationController
 private
 def design_params
   params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
+end
+
+def rating_params
+  params.require(:design_rating).permit(:rating_value, :rating_id, :user_id)
 end
 
 end
