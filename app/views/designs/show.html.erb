@@ -1,15 +1,10 @@
 <div class="container">
 
-
-
   <h2><%= @design.name %></h2>
 
-
   <% if @design.creator.present? %>
-
     <li>Designed by <%= link_to @design.creator.name, @design.creator %>
-
-    <% end %></li>
+  <% end %></li>
 
   <% if @design.image.present? %>
     <%= image_tag @design.image, :class => 'feature', :alt => @design.name %>
@@ -30,25 +25,40 @@
     <% end %>
     <% if @design.difficulty.present? %>
       <span><%= image_tag('icon-difficulty.svg', alt: 'Difficulty Icon', :class => 'icon') %> <%= @design.difficulty %></span>
+    <% end %>
+
+    <% if @current_user.design_ratings.present? %>
+      <br><span>Your Rating:&nbsp;
+
+      <% if @rating.present? %>
+      <% @rating.to_i.times do  %>
+        <%= link_to image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon'), edit_design_path %>
       <% end %>
-      <% if @current_user.design_ratings.present? %>
-        <br><span>Your Rating:&nbsp;
-
-        <% if @rating.present? %>
-
-        <% @rating.to_i.times do  %>
-          <%= link_to image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon'), edit_design_path %>
-        <% end %>
-        <% @blank.to_i.times do %>
+      <% @blank.to_i.times do %>
+        <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
+      <% end %>
+      <% else %>
+        <% 5.times do %>
           <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
-        <% end %></span>
-        <% else %>
-<% 5.times do %>
-<%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
-        <% end %>
-        <% end %>
-
       <% end %>
+    <% end %>
 
+   <br>Average Rating:&nbsp;
+   <% if @rating.present? %>
+      <% @average.to_i.times do  %>
+        <%= image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon') %>
+      <% end %>
+      <% @blank_average.to_i.times do %>
+        <%= image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon') %>
+      <% end %>
+  <% else %>
+  <% 5.times do %>
+    <%= image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon') %>
+  <% end %>
+    <% end %>
+  <% end %></span>
   </div>
+
+  <%= render partial: "disqus" %>
+
 </div>

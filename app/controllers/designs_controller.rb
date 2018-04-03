@@ -23,15 +23,19 @@ class DesignsController < ApplicationController
 
   def show
     @design = Design.find params[:id]
-    if @design.design_ratings.present?
+    if @design.design_ratings.find_by(:user => @current_user).present?
       @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
       @blank = 5 - @rating
     end
+if @rating.present?
+    @average = @design.design_ratings.average :rating_value
+    @blank_average = 5 - @average
+  end
   end
 
   def edit
     @design = Design.find params[:id]
-    if @design.design_ratings.present?
+    if @current_user.design_ratings.present?
       @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
     end
   end

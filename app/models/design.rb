@@ -19,4 +19,5 @@ class Design < ApplicationRecord
   has_many :design_ratings
   has_many :ratings, through: :design_ratings, source: :user
   accepts_nested_attributes_for :design_ratings
+  
 end
