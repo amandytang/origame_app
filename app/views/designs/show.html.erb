@@ -32,7 +32,22 @@
       <span><%= image_tag('icon-difficulty.svg', alt: 'Difficulty Icon', :class => 'icon') %> <%= @design.difficulty %></span>
       <% end %>
       <% if @current_user.design_ratings.present? %>
-      <br><span>  <%= @rating %> </span>
+        <br><span>Your Rating:&nbsp;
+
+        <% if @rating.present? %>
+
+        <% @rating.to_i.times do  %>
+          <%= link_to image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %>
+        <% @blank.to_i.times do %>
+          <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %></span>
+        <% else %>
+<% 5.times do %>
+<%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %>
+        <% end %>
+
       <% end %>
 
   </div>

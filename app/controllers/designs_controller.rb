@@ -25,12 +25,15 @@ class DesignsController < ApplicationController
     @design = Design.find params[:id]
     if @design.design_ratings.present?
       @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
+      @blank = 5 - @rating
     end
   end
 
   def edit
     @design = Design.find params[:id]
-    @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
+    if @design.design_ratings.present?
+      @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
+    end
   end
 
   def update
@@ -58,10 +61,6 @@ class DesignsController < ApplicationController
       redirect_to @design
     end
 
-  def rate
-    @design = Design.find params[:id]
-
-    end
   end
 
 private
