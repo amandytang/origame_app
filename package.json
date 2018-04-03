@@ -1,5 +1,7 @@
 {
   "name": "origame_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "yarn": "^1.5.1"
+  }
 }
