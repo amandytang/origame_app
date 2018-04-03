@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
-@import url('https://fonts.googleapis.com/css?family=Days+One');
-@import url('https://fonts.googleapis.com/css?family=Mina');
+@import image-url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans');
+@import image-url('https://fonts.googleapis.com/css?family=Days+One');
+@import image-url('https://fonts.googleapis.com/css?family=Mina');
 
 * {
   box-sizing:border-box;
@@ -384,7 +384,7 @@ select {
 }
 
 #form-heading {
-  background-image: url('wild-sea.png');
+  background: image-url('wild-sea.png');
   color: #fff;
   font-size: 1.2em;
   padding: 55px 20px 20px 20px;
@@ -395,7 +395,7 @@ select {
 }
 
 #heading {
-  background-image: url('peach.png');
+  background-image: image-url('peach.png');
   padding: 55px 20px 20px 20px;
   font-family: 'Days One';
   text-align: center;
@@ -450,55 +450,55 @@ input:focus {
 }
 
 .image {
-  background-image: url('icon-image.svg');
+  background-image: image-url('icon-image.svg');
   border: none;
   z-index: 222;
 }
 
 .nationality {
-	background-image: url('icon-nationality.svg');
+	background-image: image-url('icon-nationality.svg');
   border: none;
   z-index: 222;
 }
 
 .email {
-	background-image: url('icon-email.svg');
+	background-image: image-url('icon-email.svg');
   border: none;
   z-index: 222;
 }
 
 .rating {
-	background-image: url('icon-rating.svg');
+	background-image: image-url('icon-rating.svg');
   border: none;
   z-index: 222;
 }
 
 .password {
-	background-image: url('icon-password.svg');
+	background-image: image-url('icon-password.svg');
   border: none;
   z-index: 222;
 }
 
 .username {
-	background-image: url('icon-username.svg');
+	background-image: image-url('icon-username.svg');
   border: none;
   z-index: 222;
 }
 
 .difficulty {
-	background-image: url('icon-difficulty.svg');
+	background-image: image-url('icon-difficulty.svg');
   border: none;
   z-index: 222;
 }
 
 .name {
-	background-image: url('icon-design.svg');
+	background-image: image-url('icon-design.svg');
   border: none;
   z-index: 222;
 }
 
 .link {
-	background-image: url('icon-link.svg');
+	background-image: image-url('icon-link.svg');
   border: none;
   z-index: 222;
 }
