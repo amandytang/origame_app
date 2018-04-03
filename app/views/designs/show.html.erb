@@ -3,13 +3,13 @@
 
 
   <h2><%= @design.name %></h2>
+
+
   <% if @design.creator.present? %>
+
     <li>Designed by <%= link_to @design.creator.name, @design.creator %>
 
-    <% if @design.difficulty.present? %>
-      <span><%= image_tag('icon-difficulty.svg', alt: 'Difficulty Icon', :class => 'icon') %> <%= @design.difficulty %></span>
     <% end %></li>
-  <% end %>
 
   <% if @design.image.present? %>
     <%= image_tag @design.image, :class => 'feature', :alt => @design.name %>
@@ -28,13 +28,12 @@
     <% else %>
       <li><%= image_tag('icon-like.svg', alt: 'Favourite Icon', :class => 'icon') %><%= link_to 'Add to Favourites', favourite_design_path(@design, type: "favourite"), method: :put %></li>
     <% end %>
-
-
-    <% if @current_user.design_ratings.present? %>
-    Rates
-    <% else %>
-    No rates
-    <% end %>
+    <% if @design.difficulty.present? %>
+      <span><%= image_tag('icon-difficulty.svg', alt: 'Difficulty Icon', :class => 'icon') %> <%= @design.difficulty %></span>
+      <% end %>
+      <% if @current_user.design_ratings.present? %>
+      <br><span>  <%= @rating %> </span>
+      <% end %>
 
   </div>
 </div>

@@ -9,11 +9,10 @@ class DesignsController < ApplicationController
 
   def create
     @design = Design.create design_params
-    @design.ratings.update(params[:rating_value])
-    @current_user.rated_designs << @design
-
+    @design_rating = DesignRating.create :rating_value => params[:design][:design_rating]["rating_value"]
+    @design.design_ratings << @design_rating
+    @current_user.design_ratings << @design_rating
     redirect_to @design
-
   end
 
   def destroy
@@ -24,16 +23,28 @@ class DesignsController < ApplicationController
 
   def show
     @design = Design.find params[:id]
+    if @design.design_ratings.present?
+      @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
+    end
   end
 
   def edit
     @design = Design.find params[:id]
+    @rating = @design.design_ratings.find_by(:user => @current_user).rating_value
   end
 
   def update
     design = Design.find params[:id]
     design.update design_params
-    redirect_to design
+    if design.design_ratings.find_by(:user => @current_user).present?
+      rating = design.design_ratings.find_by(:user => @current_user)
+      rating.update :rating_value => params[:design][:design_rating]["rating_value"]
+    else
+      design_rating = DesignRating.create :rating_value => params[:design][:design_rating]["rating_value"]
+      design.design_ratings << design_rating
+      @current_user.design_ratings << design_rating
+    end
+      redirect_to design
   end
 
   def favourite
@@ -55,7 +66,7 @@ class DesignsController < ApplicationController
 
 private
 def design_params
-  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
+  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :rating_value, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
 end
 
 def rating_params
