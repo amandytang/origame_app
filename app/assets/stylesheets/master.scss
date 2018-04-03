@@ -120,7 +120,7 @@ a {
   color: #161d4a;
 }
 
-.about a, .container a {
+.about a, .container a, #gallery p a {
   color: #3f56b1;
   border-bottom: 1px solid #3f56b1;
 }
@@ -143,8 +143,14 @@ a {
   margin: 5% auto;
 }
 
+#gallery h2 {
+  width: 100%;
+  padding-left: 13px;
+}
+
 #gallery p {
   font-family: 'IBM Plex Sans', sans-serif;
+  padding-left: 13px;
 }
 
 #disqus_thread {
@@ -226,6 +232,11 @@ a {
   color: #fff;
 }
 
+.lighten {
+margin-left: -20px;
+color: #bbb;
+}
+
 .thumb img {
   object-fit: cover;
   width: 250px !important;
@@ -260,12 +271,14 @@ h2 {
   display:inline-block;
   padding-left: 20px;
   font-size: 0.9em;
+  padding-top: 1px;
 }
 
 .instructions {
   text-align: center;
   margin-top: -5px;
 }
+
 .controls a {
   border: none;
   font-size: 0.9em;

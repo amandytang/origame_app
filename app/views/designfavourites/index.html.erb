@@ -1,4 +1,6 @@
 <div id="gallery">
+  <h2>Favourites</h2>
+<br>
 <% if @current_user.favourites.present? %>
 
 <% @current_user.favourites.each do |favourite| %>
@@ -9,7 +11,5 @@
   <% end %></div>
 
 <% else %>
-
-<p>You have no favourites yet. Go <%= link_to 'find some', designs_path %>!</p>
-
+  <p>It looks like you have no favourites yet. Go <%= link_to 'find some', designs_path %>!</p>
 <% end %>
