@@ -22,6 +22,8 @@ module OrigameApp
     config.load_defaults 5.1
     config.serve_static_assets = true
     config.assets.compile = true
+    config.assets.digest = true
+
 
 
     # Settings in config/environments/* take precedence over those specified here.
