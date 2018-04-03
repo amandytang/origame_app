@@ -16,9 +16,8 @@ Rails.application.routes.draw do
 
   resources :designs
     put '/designs/:id/favourite' => 'designs#favourite' as favourite_design
-
+end
   resources :designs do
     put :rating, on: :member
   end
-
 end
