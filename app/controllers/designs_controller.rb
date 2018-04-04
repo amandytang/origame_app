@@ -1,4 +1,6 @@
 class DesignsController < ApplicationController
+  autocomplete :design, :name
+
   def index
     @designs = Design.all
       if params[:term]

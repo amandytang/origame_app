@@ -13,3 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require_tree .
+//= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/widgets/autocomplete
+//= require autocomplete-rails
