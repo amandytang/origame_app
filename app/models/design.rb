@@ -19,5 +19,13 @@ class Design < ApplicationRecord
   has_many :design_ratings
   has_many :ratings, through: :design_ratings, source: :user
   accepts_nested_attributes_for :design_ratings
-  
+
+  def self.search(term)
+  if term
+    joins(:creator).where("creators.name ILIKE ? OR designs.name ILIKE ? OR designs.difficulty ILIKE ? ", "%#{term}%", "%#{term}%", "%#{term}%") 
+  else
+    all
+  end
+end
+
 end

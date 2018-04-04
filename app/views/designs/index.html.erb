@@ -1,5 +1,12 @@
 <div id="gallery">
   <h2>Designs</h2>
+  <div id="search">    <%= image_tag 'icon-search.svg', :class => "search" %>
+
+  <%= form_tag(designs_path, method: :get) do %>
+  <%= text_field_tag :term, params[:term], placeholder: 'Search by name, difficulty or creator' %>
+  <%= submit_tag 'Search', name: nil, class: "submit" %>
+
+<% end %></div>
 <br>
 <% @designs.each do |design| %>
   <% if design.image.present? %>

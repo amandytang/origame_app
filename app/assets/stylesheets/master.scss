@@ -143,9 +143,45 @@ a {
   margin: 5% auto;
 }
 
+#search {
+  position: relative;
+  width: 100%;
+}
+
 #gallery h2 {
   width: 100%;
   padding-left: 13px;
+}
+
+#gallery form {
+  padding-top: 0 !important;
+  padding-bottom: 2%;
+  width: 100% !important;
+  margin-left: 15px !important;
+}
+
+#term {
+  display:inline-block !important;
+  width: 78.2% !important;
+}
+
+#gallery .submit {
+  display:inline-block !important;
+  margin-left: 1%;
+  width: 15% !important;
+  color: #fff;
+  background-color: #e32551;
+  font-family: 'Days One', sans-serif !important;
+  border: none;
+  padding: 15px 20px 15px 15px !important;
+}
+
+#gallery .submit:hover {
+  background-color: #d31b46;
+}
+
+#gallery input > .submit{
+  padding-left: 20px;
 }
 
 #gallery p {
@@ -233,8 +269,8 @@ a {
 }
 
 .lighten {
-margin-left: -20px;
-color: #bbb;
+  margin-left: -20px;
+  color: #bbb;
 }
 
 .thumb img {
@@ -306,7 +342,7 @@ h2 {
 }
 
 form {
-  padding-top: 120px !important;
+  padding-top: 100px !important;
   width: 40% !important;
   margin: 0 auto !important;
 }
@@ -487,6 +523,13 @@ input:focus {
 	background-image: url('icon-email.svg');
   border: none;
   z-index: 222;
+}
+
+.search {
+	 z-index: 10;
+   margin-top: 15px;
+   margin-left: 30px;
+   position: absolute;
 }
 
 .rating {

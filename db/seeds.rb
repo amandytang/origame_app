@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+u1 = User.create :username => 'Mandy', :email => 'mandy@ga.co', password_digest: BCrypt::Password.create('chicken')
 
 Design.destroy_all
 d1 = Design.create :name => 'Bottle and Cork', :difficulty => 'Advanced', :instructions => 'http://jonakashima.com.br/2017/06/23/origami-bottle-v2-cork/', :image => 'https://i.imgur.com/e9GHYC0.jpg'
@@ -20,6 +21,8 @@ d8 = Design.create :name => 'A3 Rose', :difficulty => 'Advanced', :image => 'htt
 d9 = Design.create :name => 'Kangaroo', :difficulty => 'Advanced', :image => 'https://i.imgur.com/BV6HG77.png', :instructions => 'https://www.youtube.com/watch?v=7CVs_tuIQCU'
 d10 = Design.create :name => 'Navel Shell', :difficulty => 'Intermediate', :image => 'https://i.imgur.com/wNi7PD0.png', :instructions => 'https://www.youtube.com/watch?v=-n1K_gKP_7Q'
 d11 = Design.create :name => 'Horseman', :difficulty => 'Advanced', :image => 'https://i.imgur.com/GnYkFiG.png'
+d12 = Design.create :name => 'Heart', :difficulty => 'Beginner', :image => 'https://i.imgur.com/QOpGLfb.png', :instructions => 'https://www.youtube.com/watch?v=7OwH9YlBSgQ'
+d13 = Design.create :name => 'Lotus', :difficulty => 'Beginner', :image => 'https://i.imgur.com/dk2IlEl.png', :instructions => 'https://www.youtube.com/watch?v=xfBD8djzDlo'
 
 Creator.destroy_all
 c1 = Creator.create :name => 'Jo Nakashima', :nationality => 'Brazilian/Japanese', :website => 'http://jonakashima.com.br/', :image => 'https://i.imgur.com/XF9UqPA.jpg'
@@ -39,6 +42,7 @@ DesignFavourite.destroy_all
 c1.designs << d1
 c1.designs << d2
 c1.designs << d3
+c1.designs << d12
 c2.designs << d5
 c3.designs << d4
 c5.designs << d7

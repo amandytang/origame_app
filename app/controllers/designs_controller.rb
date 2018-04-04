@@ -1,6 +1,11 @@
 class DesignsController < ApplicationController
   def index
     @designs = Design.all
+      if params[:term]
+        @designs = Design.search(params[:term])
+      else
+        @designs = Design.all.order("created_at DESC")
+      end
   end
 
   def new
@@ -69,7 +74,7 @@ class DesignsController < ApplicationController
 
 private
 def design_params
-  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :rating_value, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
+  params.require(:design).permit(:name, :instructions, :image, :difficulty, :creator_id, :term, :rating_value, :rating_id, :user_id, design_ratings_attributes: [:rating_value])
 end
 
 def rating_params
