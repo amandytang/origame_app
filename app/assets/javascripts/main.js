@@ -49,12 +49,5 @@ $(document).ready( function () {
   styles: {}                            // A style object to place on the child elements
   });
 
-  $("#find-subj").autocomplete({
-      source: availableTags,
-      messages: {
-          noResults: '',
-          results: function() {}
-      }
-  });
 
 });

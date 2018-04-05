@@ -20,10 +20,11 @@ Check out the [live version](https://origame-db.herokuapp.com/).
 * Comment on designs through Disqus
 
 ## Possible Improvements
-* User permissions
+* Improved Responsiveness
 * More robust validation on forms
-* Follower model
+* User permissions
 * Accessibility
+* Follower model
 * Expanding autocomplete
 
 ## Acknowledgements
