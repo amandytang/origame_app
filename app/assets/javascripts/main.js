@@ -40,7 +40,7 @@ if (window.location.pathname == '/login' || window.location.pathname == '/' || w
 
   $('#notice').addClass('animated slideInDown');
 
-  $("#gallery").stalactite({
+  $(".container").stalactite({
   duration: 350,                        // Duration of animation.
   easing: 'swing',                      // Easing method.
   cssPrefix: '.stalactite',             // The css naming convention.

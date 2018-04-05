@@ -1,29 +1,28 @@
-<div class="container">
+<div id="gallery">
 
 <h2><%= @creator.name %></h2>
-<% if @creator.image.present? %>
+<div class="creator-info"><div class="controls">
+  <li><%= image_tag('icon-delete.svg', alt: 'Delete Icon', :class => 'icon') %><%= link_to 'Delete Creator', @creator, :method => 'delete', :data => { :confirm => 'Are you sure?' } %></li>
+  <li><%= image_tag('icon-edit.svg', alt: 'Edit Icon', :class => 'icon') %><%= link_to 'Edit Creator', edit_creator_path(@creator) %></li>
+</div>
+<% if @creator.nationality.present? %>
 <li>Nationality: <%= @creator.nationality %></li>
 <% end %>
 <% if @creator.website.present? %>
 <li><%= link_to 'Website', @creator.website %></li>
-<% end %>
+<% end %></div>
 
 <% if @creator.image.present? %>
 <%= image_tag @creator.image, :class => 'feature', :alt => @creator.name %>
 <% end %>
-</div>
-<div class="showcase">
+
 <% unless @creator.designs.empty? %>
 <h3>Designs</h3>
-
+<div class="container">
 <% @creator.designs.each do |design| %>
 <div class="thumb hvr-float">
  <%= link_to image_tag(design.image, alt: design.name), design  %><div class="label"><%= design.name %></div></div>
 <% end %>
-<% end %></div>
-<div class="container">
-  <div class="controls">
-    <li><%= image_tag('icon-edit.svg', alt: 'Edit Icon', :class => 'icon') %><%= link_to 'Edit Creator', edit_creator_path(@creator) %></li>
-    <li><%= image_tag('icon-delete.svg', alt: 'Delete Icon', :class => 'icon') %><%= link_to 'Delete Creator', @creator, :method => 'delete', :data => { :confirm => 'Are you sure?' } %></li>
+<% end %>
   </div>
 </div>

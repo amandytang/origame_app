@@ -1,4 +1,4 @@
-<%= form_for @design do |f| %>
+<%= form_for(@design, :html => { :multipart => true }) do |f| %>
 
 <div id="form-heading" class="paper">Add a Design</div>
 
@@ -8,7 +8,9 @@
   <%= f.text_field :name, :required => true, :autofocus => true, placeholder: "Name of Design" %>
 
   <%= f.label :image, :class => "image-replace image" %>
-  <%= f.url_field :image, placeholder: "Link to Image" %>
+  <%= f.file_field :image, :id => "dropzone-area" %>
+
+  <%= hidden_field_tag :image_link %>
 
   <%= f.label :instructions, :class => "image-replace link" %>
   <%= f.text_field :instructions, placeholder: "Link to Instructions" %>

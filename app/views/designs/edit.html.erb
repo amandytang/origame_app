@@ -8,7 +8,15 @@
   <%= f.text_field :name, :required => true, :autofocus => true, placeholder: "Name of Design" %>
 
   <%= f.label :image, :class => "image-replace image" %>
-  <%= f.url_field :image, placeholder: "Link to Image" %>
+
+  <% if @design.image.present? %>
+    <%= f.url_field :image, placeholder: "Link to Image" %>
+    <%= f.file_field :image, :id => "file_edit", placeholder: "Link to Image" %>
+  <% else %>
+    <%= f.file_field :image, placeholder: "Link to Image" %>
+  <% end %>
+
+  <%= hidden_field_tag :image_link %>
 
   <%= f.label :difficulty, :class => "image-replace difficulty" %>
   <%= f.select :difficulty, ['Beginner', 'Intermediate', 'Advanced'], :prompt => 'Difficulty' %>

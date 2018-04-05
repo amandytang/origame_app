@@ -14,7 +14,9 @@
   <%= f.url_field :website, placeholder: "Website URL" %>
 
   <%= f.label :image, :class => "image-replace image" %>
-  <%= f.url_field :image, placeholder: "Image of Creator" %>
+  <%= f.file_field :image, :id => "dropzone-area" %>
+
+  <%= hidden_field_tag :image_link %>
 
   <%= f.submit 'ADD CREATOR', :class => "submit" %>
   </p>

@@ -8,10 +8,20 @@
 
 * html .ui-autocomplete { width:1px; }
 
+#file_edit {
+  margin-top: -20px !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
 .hero img {
   background-size: cover;
   width:100%;
   z-index: 2;
+}
+
+input[type=file] {
+  font-size: 0.8em;
 }
 
 body {
@@ -27,7 +37,7 @@ header {
 
 .maki dt, .maki dd, .maki a { background: #e32551; }
 
-.maki a:hover { background: #d31b46; }
+.maki a:hover { background: #d31b46; opacity: 1 !important;}
 
 .maki {
   -webkit-transform: perspective(1200px) rotateY(40deg) !important;
@@ -60,6 +70,7 @@ header {
   display: block;
   color: #fff;
   padding: 4%;
+  border: none !important
 }
 
 .maki a.active {
@@ -104,8 +115,20 @@ header {
 
 a {
   text-decoration: none;
+  color: #3f56b1;
+  border-bottom: 1px solid #3f56b1;
 }
 
+a:hover {
+  opacity: 0.8;
+}
+
+#gallery .container a {
+  border:none !important;
+}
+#gallery .container a:hover {
+  opacity: 1 !important;
+}
 .arrow {
   margin-top: -20%;
 }
@@ -122,12 +145,8 @@ a {
   color: #161d4a;
 }
 
-.about a, .container a, #gallery p a {
-  color: #3f56b1;
-  border-bottom: 1px solid #3f56b1;
-}
 
-.about a:hover, .container a:hover {
+.about a:hover {
   opacity: 0.8;
 }
 
@@ -141,30 +160,42 @@ a {
 }
 
 #gallery {
-  max-width: 60%;
+  max-width: 70%;
   margin: 5% auto;
+  padding: 0;
+}
+
+#gallery .container {
+  width: 100%;
+  display:flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #search {
   position: relative;
-  width: 100%;
+  width: 87%;
 }
 
 #gallery h2 {
   width: 100%;
-  padding-left: 13px;
+  padding-left: 7%;
 }
 
 #gallery form {
   padding-top: 0 !important;
   padding-bottom: 2%;
+  text-align: center !important;
   width: 100% !important;
-  margin-left: 15px !important;
+  display: block;
 }
 
 #term {
   display:inline-block !important;
-  width: 78.2% !important;
+  width: 80% !important;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 #gallery .submit {
@@ -196,17 +227,17 @@ a {
   margin-bottom: 2%;
 }
 
-.showcase {
-  max-width: 60%;
-  margin: 0 auto;
-   text-align:center;
+.creator-info {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
 }
-.showcase h3 {
+
+#gallery h3 {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #161d4a;
   font-size: 1.3em;
-  margin-top:-3%;
-  margin-bottom: 1%;
+  padding-left: 7%;
 }
 
 .feature {
@@ -219,45 +250,19 @@ a {
 }
 
 .thumb {
+  text-align: center;
+  margin: 15px 15px 30px 15px;
+  padding: 0 !important;
   display:inline-block;
   width: 250px !important;
   height: 250px;
   position:relative;
-  margin: 15px;
 	background-color: #fff;
-	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1) !important;
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1) !important;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1) !important;
 }
 
-.thumb:before, .thumb:after {
-  position: absolute;
-	width: 40%;
-	height: 10px;
-	content: ' ';
-	left: 12px;
-	bottom: 10px;
-	background: transparent;
-  -webkit-transform: skew(-5deg) rotate(-5deg);
-	-moz-transform: skew(-5deg) rotate(-5deg);
-	-ms-transform: skew(-5deg) rotate(-5deg);
-	-o-transform: skew(-5deg) rotate(-5deg);
-	transform: skew(-5deg) rotate(-5deg);
-	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-	z-index: -1;
-}
-
-.thumb:after {
-	left: auto;
-	right: 12px;
-	-webkit-transform: skew(5deg) rotate(5deg);
-	-moz-transform: skew(5deg) rotate(5deg);
-	-ms-transform: skew(5deg) rotate(5deg);
-	-o-transform: skew(5deg) rotate(5deg);
-	transform: skew(5deg) rotate(5deg);
-}
 
 .thumb .label {
   position: absolute;
@@ -265,7 +270,7 @@ a {
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: rgba(0, 0, 0, 0.15);
   width: 250px;
-  margin: -43px auto 0px 0px;
+  margin: -50px auto 0px 0px;
   padding: 10px;
   color: #fff;
 }
@@ -336,7 +341,9 @@ h2 {
   line-height: 1.5em;
 }
 
-.container li {
+.container li, #gallery li {
+  font-family: 'IBM Plex Sans', sans-serif;
+
   list-style-type: none;
   padding-left: 20px;
   max-width: 50%;
@@ -533,6 +540,7 @@ input:focus {
    margin-left: 30px;
    position: absolute;
 }
+
 .ui-autocomplete {
   position: absolute;
   top: 100%;
@@ -564,26 +572,29 @@ input:focus {
   padding: 5px 0px 5px 15px;
 }
 
-.ui-menu-item { cursor: pointer; }
+.ui-menu-item {
+  cursor: pointer;
+}
 
 .ui-menu-item:hover {
-      color: #ffffff;
-      text-decoration: none;
-      background-color: rgba(0, 0, 0, 0.15);
-      border-radius: 0px;
-      -webkit-border-radius: 0px;
-      -moz-border-radius: 0px;
-      background-image: none;
-    }
+  color: #ffffff;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  background-image: none;
+}
 
 .ui-menu-item > a.ui-corner-all {
-    display: block;
-    padding: 3px 15px;
-    clear: both;
-    font-weight: normal;
-    line-height: 18px;
-    color: #555555;
-    white-space: nowrap;}
+  display: block;
+  padding: 3px 15px;
+  clear: both;
+  font-weight: normal;
+  line-height: 18px;
+  color: #555555;
+  white-space: nowrap;
+}
 
 .rating {
 	background-image: url('icon-rating.svg');

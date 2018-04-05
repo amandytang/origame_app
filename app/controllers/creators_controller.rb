@@ -14,12 +14,21 @@ class CreatorsController < ApplicationController
   end
 
   def create
-    creator = Creator.create creator_params
-    redirect_to creator
+    @creator = Creator.create creator_params
+
+    if params[:creator][:image].present?
+      cloudinary = Cloudinary::Uploader.upload( params[:creator][:image] )
+      @creator.update :image => cloudinary["url"]
+    elsif params[:image_link].present?
+      @creator.update :image => params[:image_link]
+    end
+
+    redirect_to @creator
   end
 
   def show
     @creator = Creator.find params[:id]
+
   end
 
   def edit
@@ -29,6 +38,14 @@ class CreatorsController < ApplicationController
   def update
     creator = Creator.find params[:id]
     creator.update creator_params
+
+    if params[:creator][:image].present?
+      cloudinary = Cloudinary::Uploader.upload( params[:creator][:image] )
+      creator.update :image => cloudinary["url"]
+    elsif params[:image_link].present?
+      creator.update :image => params[:image_link]
+    end
+
     redirect_to creator
   end
 

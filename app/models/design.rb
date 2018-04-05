@@ -13,6 +13,7 @@
 #
 
 class Design < ApplicationRecord
+  scope :ordered, -> { includes(:design_ratings).order('design_ratings.rating_value') }
   belongs_to :creator, :optional => true
   has_many :design_favourites # Links design with the 'favourite' join model
   has_many :favourited_by, through: :design_favourites, source: :user # Specifying what is returned from the relationship

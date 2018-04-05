@@ -14,7 +14,14 @@
   <%= f.url_field :website, placeholder: "Website URL" %>
 
   <%= f.label :image, :class => "image-replace image" %>
-  <%= f.url_field :image, placeholder: "Image of Creator" %>
+
+  <% if @creator.image.present? %>
+    <%= f.url_field :image, placeholder: "Link to Image" %>
+    <%= f.file_field :image, :id => "file_edit", placeholder: "Link to Image" %>
+  <% else %>
+    <%= f.file_field :image, placeholder: "Link to Image" %>
+  <% end %>
+  <%= hidden_field_tag :image_link %>
 
   <%= f.submit 'EDIT CREATOR', :class => "submit" %>
   </p>

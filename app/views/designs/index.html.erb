@@ -1,5 +1,6 @@
 <div id="gallery">
   <h2>Designs</h2>
+  <div class="container">
   <div id="search">    <%= image_tag 'icon-search.svg', :class => "search" %>
 
   <%= form_tag(designs_path, method: :get) do %>
@@ -17,3 +18,4 @@
    <%= link_to image_tag('default.png', alt: design.name), design %><div class="label"><%= design.name %></div></div>
     <% end %>
   <% end %></div>
+</div>

@@ -1,4 +1,6 @@
 <div id="gallery">
+  <div class="container">
+
   <h2>Creators</h2>
 <br>
 <% @creators.each do |creator| %>
@@ -10,3 +12,4 @@
     <%= link_to image_tag('default.png', alt: creator.name), creator %><div class="label"><%= creator.name %></div></div>
     <% end %>
   <% end %></div>
+</div>

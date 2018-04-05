@@ -31,23 +31,21 @@
     <span><%= image_tag('icon-like.svg', alt: 'Favourite Icon', :class => 'icon') %> Favourited by <%= pluralize(@design.design_favourites.count, 'person') %> </span>
     <% end %>
 
-    <% if @current_user.design_ratings.present? %>
       <br>
       <br><span>Your Rating:&nbsp;
 
       <% if @rating.present? %>
-      <% @rating.to_i.times do  %>
-        <%= link_to image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon'), edit_design_path %>
-      <% end %>
-      <% @blank.to_i.times do %>
-        <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
-      <% end %>
+        <% @rating.to_i.times do  %>
+          <%= link_to image_tag('star-on.png', alt: 'Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %>
+        <% @blank.to_i.times do %>
+          <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %>
       <% else %>
         <% 5.times do %>
           <%= link_to image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon'), edit_design_path %>
+        <% end %>
       <% end %>
-    <% end %>
-
    <br>Average Rating:&nbsp;
    <% if @design.design_ratings.present? %>
       <% @average.to_i.times do  %>
@@ -60,7 +58,7 @@
   <% 5.times do %>
     <%= image_tag('star-off.png', alt: 'Blank Star Icon', :class => 'star-icon') %>
   <% end %>
-    <% end %>
+  
   <% end %></span>
   </div>
 
