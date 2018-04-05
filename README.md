@@ -1,24 +1,39 @@
-# README
+# Origame.db
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Origami is the Japanese art of folding paper into decorative shapes. **Origame.db** is a database where users can create and share their designs.  
 
-Things you may want to cover:
+Check out the [live version](https://origame-db.herokuapp.com/).
 
-* Ruby version
+![Origame Screenshot](https://github.com/amandytang/origame_app/blob/master/app/assets/images/screenshot.png)
+<br/>
 
-* System dependencies
+## Features
+* Register as a user
+* Search existing origami designs or create your own
+* Partial autocomplete available when searching
+* Rate designs and see average ratings
+* Favourite designs you like
+* Browse origami creators
+* Upload images to the database through Cloudinary
+* Drag and drop enabled for image upload
+* Lazy loading of images in the gallery
+* Comment on designs through Disqus
 
-* Configuration
+## Possible Improvements
+* User permissions
+* More robust validation on forms
+* Follower model
+* Accessibility
+* Expanding autocomplete
 
-* Database creation
+## Acknowledgements
 
-* Database initialization
+To WDI-26 at General Assembly, and our fearless leader, Joel Turnbull.
 
-* How to run the test suite
+## Technologies
 
-* Services (job queues, cache servers, search engines, etc.)
+Built using jQuery, Ruby on Rails, [Oridomi](https://github.com/dmotz/oriDomi), [Stalactite](https://github.com/jonobr1/stalactite), [Dropzone.js](http://www.dropzonejs.com/) and [Makisu](https://github.com/soulwire/Makisu).
 
-* Deployment instructions
+## Licence
 
-* ...
+Licensed under MIT.
