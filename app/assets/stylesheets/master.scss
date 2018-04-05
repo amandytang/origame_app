@@ -8,20 +8,14 @@
 
 * html .ui-autocomplete { width:1px; }
 
-#file_edit {
-  margin-top: -20px !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
 .hero img {
   background-size: cover;
   width:100%;
   z-index: 2;
 }
 
-input[type=file] {
-  font-size: 0.8em;
+header {
+  display: inline-block;
 }
 
 body {
@@ -29,10 +23,6 @@ body {
   padding: 0px !important;
   display: inline-block;
   width: 100%;
-}
-
-header {
-  display: inline-block;
 }
 
 .maki dt, .maki dd, .maki a { background: #e32551; }
@@ -123,12 +113,7 @@ a:hover {
   opacity: 0.8;
 }
 
-#gallery .container a {
-  border:none !important;
-}
-#gallery .container a:hover {
-  opacity: 1 !important;
-}
+
 .arrow {
   margin-top: -20%;
 }
@@ -145,7 +130,6 @@ a:hover {
   color: #161d4a;
 }
 
-
 .about a:hover {
   opacity: 0.8;
 }
@@ -157,6 +141,14 @@ a:hover {
 
 .accent {
   border-bottom: 1px dotted #051b54;
+}
+
+#gallery .container a {
+  border:none !important;
+}
+
+#gallery .container a:hover {
+  opacity: 1 !important;
 }
 
 #gallery {
@@ -240,6 +232,11 @@ a:hover {
   padding-left: 7%;
 }
 
+h2 {
+  font-family: 'Mina', sans-serif;
+  font-size: 1.6em !important;
+}
+
 .feature {
   max-width: 80%;
   margin: 3% auto 3% auto;
@@ -262,7 +259,6 @@ a:hover {
 	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1) !important;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1) !important;
 }
-
 
 .thumb .label {
   position: absolute;
@@ -305,11 +301,6 @@ a:hover {
   transform: translateY(-8px);
 }
 
-h2 {
-  font-family: 'Mina', sans-serif;
-  font-size: 1.6em !important;
-}
-
 .controls span {
   display:inline-block;
   padding-left: 20px;
@@ -343,7 +334,6 @@ h2 {
 
 .container li, #gallery li {
   font-family: 'IBM Plex Sans', sans-serif;
-
   list-style-type: none;
   padding-left: 20px;
   max-width: 50%;
@@ -366,6 +356,16 @@ form {
   padding: 1.4em;
   margin: 0 auto;
   width: 40%;
+}
+
+#file_edit {
+  margin-top: -20px !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+input[type=file] {
+  font-size: 0.8em;
 }
 
 .fieldset {
@@ -444,6 +444,7 @@ select {
   padding-right: 1px;
   width: 20px;
 }
+
 .like {
   vertical-align: -4px;
   padding-left: 2px;

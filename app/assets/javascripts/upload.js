@@ -21,5 +21,4 @@ if (window.location.pathname == '/new') {
     });
   }
 
-
 })
