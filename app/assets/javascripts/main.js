@@ -49,6 +49,12 @@ if (window.location.pathname == '/login' || window.location.pathname == '/' || w
   loader: '<img />',                    // The contents of the loader. Defaults to a dataURL animated gif.
   styles: {}                            // A style object to place on the child elements
   });
-
+  $("#find-subj").autocomplete({
+      source: availableTags,
+      messages: {
+          noResults: '',
+          results: function() {}
+      }
+  });
 
 });
