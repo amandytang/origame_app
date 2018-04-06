@@ -2,11 +2,24 @@
 @import url('https://fonts.googleapis.com/css?family=Days+One');
 @import url('https://fonts.googleapis.com/css?family=Mina');
 
+$brand: #e32551;
+$brand-hover: #d31b46;
+$link: #3f56b1;
+$text: #161d4a;
+$form-border: #d3d3d3;
+
 * {
   box-sizing:border-box;
 }
 
 * html .ui-autocomplete { width:1px; }
+
+body {
+  margin: 0 auto !important;
+  padding: 0px !important;
+  display: inline-block;
+  width: 100%;
+}
 
 .hero img {
   background-size: cover;
@@ -18,16 +31,9 @@ header {
   display: inline-block;
 }
 
-body {
-  margin: 0 auto !important;
-  padding: 0px !important;
-  display: inline-block;
-  width: 100%;
-}
+.maki dt, .maki dd, .maki a { background: $brand; }
 
-.maki dt, .maki dd, .maki a { background: #e32551; }
-
-.maki a:hover { background: #d31b46; opacity: 1 !important;}
+.maki a:hover { background: $brand-hover; opacity: 1 !important;}
 
 .maki {
   -webkit-transform: perspective(1200px) rotateY(40deg) !important;
@@ -75,7 +81,7 @@ body {
 .list dt, .list dd {
   text-indent: 6%;
   line-height: 1.25em;
-  background: #E32551;
+  background: $brand;
   height: 10%;
   color: #fff;
 }
@@ -105,14 +111,13 @@ body {
 
 a {
   text-decoration: none;
-  color: #3f56b1;
-  border-bottom: 1px solid #3f56b1;
+  color: $link;
+  border-bottom: 1px solid $link;
 }
 
 a:hover {
   opacity: 0.8;
 }
-
 
 .arrow {
   margin-top: -20%;
@@ -127,7 +132,7 @@ a:hover {
 .about {
   width: 40%;
   margin: 27% auto 0 auto;
-  color: #161d4a;
+  color: $text;
 }
 
 .about a:hover {
@@ -195,14 +200,14 @@ a:hover {
   margin-left: 1%;
   width: 15% !important;
   color: #fff;
-  background-color: #e32551;
+  background-color: $brand;
   font-family: 'Days One', sans-serif !important;
   border: none;
   padding: 15px 20px 15px 15px !important;
 }
 
 #gallery .submit:hover {
-  background-color: #d31b46;
+  background-color: $brand-hover;
 }
 
 #gallery input > .submit{
@@ -214,20 +219,9 @@ a:hover {
   padding-left: 13px;
 }
 
-#disqus_thread {
-  margin-top: 5%;
-  margin-bottom: 2%;
-}
-
-.creator-info {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 1%;
-}
-
 #gallery h3 {
   font-family: 'IBM Plex Sans', sans-serif;
-  color: #161d4a;
+  color: $text;
   font-size: 1.3em;
   padding-left: 7%;
 }
@@ -308,11 +302,6 @@ h2 {
   padding-top: 1px;
 }
 
-.instructions {
-  text-align: center;
-  margin-top: -5px;
-}
-
 .controls a {
   border: none;
   font-size: 0.9em;
@@ -327,7 +316,7 @@ h2 {
   width: 65%;
   margin: 2% auto 0 auto;
   font-family: 'IBM Plex Sans', sans-serif;
-  color: #161d4a;
+  color: $text;
   padding: 2%;
   line-height: 1.5em;
 }
@@ -338,6 +327,22 @@ h2 {
   padding-left: 20px;
   max-width: 50%;
   display: inline-block;
+}
+
+.instructions {
+  text-align: center;
+  margin-top: -5px;
+}
+
+#disqus_thread {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.creator-info {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
 }
 
 form {
@@ -379,7 +384,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   display: block;
-  border: 1px solid #d3d3d3;
+  border: 1px solid $form-border;
   outline: none;
   width: 100%;
   color: #757575;
@@ -415,7 +420,6 @@ select {
 }
 
 .field_with_errors.image-replace, .image-replace {
-		/* replace label text with an icon */
 		display: inline-block;
     float:right;
     position: absolute;
@@ -492,7 +496,7 @@ select {
 input {
   display: block;
 	padding: 15px 20px 15px 50px !important;
-	border: 1px solid #d3d3d3;
+	border: 1px solid $form-border;
 	outline: none;
   width: 100%;
 }
@@ -507,14 +511,14 @@ input:focus {
 
 .submit {
   color: #fff;
-  background-color: #e32551;
+  background-color: $brand;
   font-family: 'Days One', sans-serif !important;
   border: none;
   padding: 15px 20px 15px 0px !important;
 }
 
 .submit:hover {
-  background-color: #d31b46;
+  background-color: $brand-hover;
 }
 
 .image {
@@ -554,7 +558,7 @@ input:focus {
   padding: 4px 0;
   margin: 2px 0 0 0;
   list-style: none;
-  background-color: #ffffff;
+  background-color: #fff;
   border-color: #ccc;
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
@@ -567,7 +571,8 @@ input:focus {
   -moz-background-clip: padding;
   background-clip: padding-box;
   *border-right-width: 2px;
-  *border-bottom-width: 2px;}
+  *border-bottom-width: 2px;
+}
 
 .ui-menu-item {
   padding: 5px 0px 5px 15px;
@@ -596,6 +601,7 @@ input:focus {
   color: #555555;
   white-space: nowrap;
 }
+
 .ui-helper-hidden-accessible {
   border: 0;
   clip: rect(0 0 0 0);
